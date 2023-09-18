@@ -1,1 +1,27 @@
-<p>card-employee works!</p>
+<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+  <ng-container *ngFor="let item of employee?.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)">
+    <div class="p-4 rounded-md bg-gray-800 w-auto">
+      <div class="flex flex-col space-y-2">
+        <div class="flex justify-between">
+          <div class="flex justify-start space-x-4">
+            <img class="rounded-full w-[60px] h-[60px] object-cover"
+                 width="60"
+                 height="60"
+                 [ngSrc]="item.picture"
+                 alt="employee">
+            <div class="flex flex-col space-y-1">
+              <p class="capitalize text-white font-bold">{{item?.username}}</p>
+              <p class="capitalize text-gray-700 text-sm font-normal bg-primary-300 p-0.5 rounded-sm w-fit h-fit">{{item?.group}}</p>
+            </div>
+          </div>
+          <div class="flex flex-col space-y-1">
+            <button (click)="goToDetail(item._id)" class="text-white bg-primary-900 rounded-mdv h-fit py-1 px-2 rounded-md">Detail</button>
+            <button (click)="onDelete(item._id)" class="text-white bg-red-900 rounded-mdv h-fit py-1 px-2 rounded-md">Delete</button>
+          </div>
+        </div>
+        <p class="capitalize text-white text-sm">{{item.email}}</p>
+        <p class="capitalize text-white text-sm">{{item.birtDate}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

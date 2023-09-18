@@ -1,1 +1,48 @@
-<p>create works!</p>
+<div class="p-4 rounded-md bg-gray-300 w-auto">
+  <h1 class="font-bold text-gray-950 text-2xl pb-10">Create Employees</h1>
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="firstName" class="block mb-2 text-sm font-medium text-gray-950">First Name</label>
+      <input type="email" id="firstName" formControlName="firstName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" required>
+    </div>
+    <div class="mb-4">
+      <label for="lastName" class="block mb-2 text-sm font-medium text-gray-950">Last Name</label>
+      <input type="email" id="lastName" formControlName="lastName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name" required>
+    </div>
+    <div class="mb-4">
+      <label for="username" class="block mb-2 text-sm font-medium text-gray-950">Username</label>
+      <input type="text" id="username" formControlName="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username" required>
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-950">Email</label>
+      <input type="email" id="email" formControlName="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="user@test.com" required>
+    </div>
+    <div class="mb-4">
+      <label for="birthaDate" class="block mb-2 text-sm font-medium text-gray-950">Birth Date</label>
+      <input type="date" id="birthaDate" formControlName="birtDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="dd/MM/YYYY" required>
+    </div>
+    <div class="mb-4">
+      <label for="salary" class="block mb-2 text-sm font-medium text-gray-950">Basic Salary</label>
+      <input type="number" id="salary" formControlName="basicSalary" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Basic Salary" required>
+    </div>
+    <div class="mb-4">
+      <label for="group" class="block mb-2 text-sm font-medium text-gray-950">Group</label>
+      <select id="group" formControlName="group" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Choose a country</option>
+        <option value="employee">Employee</option>
+        <option value="designer">Designer</option>
+        <option value="marketing">Marketing</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block mb-2 text-sm font-medium text-gray-950">Description</label>
+      <textarea id="description" placeholder="Description" formControlName="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
+    </div>
+    <div class="flex justify-start space-x-4">
+      <button [disabled]="employeeForm.invalid" type="submit" class="text-white bg-primary-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+      <button routerLink="/employee/list" type="button" class="text-white bg-primary-300 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-300 dark:hover:bg-blue-400 dark:focus:ring-blue-800">Cancel</button>
+    </div>
+  </form>
+</div>
+

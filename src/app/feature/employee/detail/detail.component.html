@@ -1,1 +1,19 @@
-<p>detail works!</p>
+<div class="p-4 rounded-md bg-gray-800 w-full ">
+  <ng-container *ngIf="detailEmployee$ | async as employee">
+    <div class="flex justify-between">
+      <div class="flex flex-col space-y-2 text-white">
+        <p><span class="font-semibold bg-primary-300 p-0.5 rounded-sm capitalize">{{employee?.group}}</span></p>
+        <p>Name : <span class="font-bold">{{employee?.username}}</span></p>
+        <p>Email : <span class="font-semibold">{{employee?.email}}</span></p>
+        <p>Birth Date : <span class="font-semibold">{{employee?.birtDate}}</span></p>
+        <p class="font-normal">Salary : <span>{{Number(employee?.basicSalary) | rupiah}}</span></p>
+        <p><span class="font-thin">{{employee?.description}}</span></p>
+      </div>
+      <img width="200" height="200" class="h-[134px] rounded-sm" [ngSrc]="employee.picture" alt="profile picture">
+    </div>
+  </ng-container>
+
+  <button (click)="back()"
+          class="bg-primary-900 px-4 text-white rounded-md font-bold">Previous</button>
+
+</div>
